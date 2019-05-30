@@ -1,0 +1,17 @@
+8
+1
+10
+3 5 0
+3
+100
+
+
+diffT = edges[here][1][k].departure - (left[j].inTime % 24);
+
+left[j].outTime = left[j].inTime + diffT;
+left[j + 1].inTime = left[j].outTime + e.spendtime;
+ti = left[j + 1].inTime;
+money = money + e.money;
+left[j].outType = 2;
+left[j].next = left[j + 1].here = cities[here].out[i];
+here = cities[here].out[i];
